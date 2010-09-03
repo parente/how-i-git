@@ -1,0 +1,214 @@
+.. include:: <s5defs.txt>
+
+===============
+Just Enough Git
+===============
+
+:Author: Peter Parente
+:Date: 2010-09-10
+
+What is Git?
+============
+
+* A distributed version control system
+* A toolkit for dealing with changes
+* A bunch of command line utilities
+
+Why do I like git?
+==================
+
+.. class:: incremental
+
+* Staging is useful
+* Local branching is fast
+* It has that Unix feel
+* github is great
+
+Lingo: Nouns
+============
+
+.. class:: incremental
+
+* working copy
+* stage
+* commit
+* branch
+* repository
+* master branch
+* origin server
+
+Lingo: Verbs
+============
+
+.. class:: incremental
+
+* to stage
+* to commit
+* to branch
+* to push
+* to fetch
+* to merge
+
+How I git started
+=================
+
+.. class:: incremental
+
+#. I install git on my machine
+#. I set my git configuration
+#. I create or clone a repository
+
+Install git
+===========
+
+* Did you do it?
+* See http://help.github.com/
+
+Configure git
+=============
+
+* Edit ~/.gitconfig
+* See http://gist.github.com/563331 for mine
+
+Create a repository
+===================
+
+git init
+
+Clone an existing repository
+============================
+
+git clone <remote repository URL>
+
+How I use git daily
+===================
+
+.. class:: incremental
+
+#. I write code
+#. I stage chunks of changes
+#. I commit to "master"
+#. GOTO 1
+
+Stage some changes
+==================
+
+git add --patch
+git remove
+
+Commit my changes
+=================
+
+git commit
+
+How I share code on github
+==========================
+
+#. I fetch commits from github
+#. I push my commits to github
+#. I merge remote changes into master
+
+Fetch changes from a remote repository
+======================================
+
+git fetch origin
+
+Merge remote changes
+====================
+
+git merge origin/master
+
+Push commits to a remote repository
+===================================
+
+git push origin master
+
+How I work on "big" features
+============================
+
+#. I create a branch
+#. I switch to the branch
+#. I code, stage, commit in the branch
+#. I switch back to "master" to do other work
+#. I merge the branch into "master"
+#. I might push a branch to github
+#. I might track a branch on github
+
+Create a new branch
+===================
+
+git checkout -b <branch>
+
+Switch to a branch
+==================
+
+git checkout <branch>
+
+Merge one branch into another
+=============================
+
+git merge <branch>
+
+Start a local copy of a shared branch
+=====================================
+
+git branch --track <server> <branch>
+
+How I deal with disaster
+========================
+
+* I reset my working copy
+* I amend the last commit
+* I undo the last commit
+* I resolve conflicts during merge
+* I fetch and merge before I push
+
+Reset the working copy
+======================
+
+git reset --hard HEAD
+
+**Warning**: loses uncommitted work
+
+Amend the last commit
+=====================
+
+Undo the last commit
+====================
+
+git reset --soft HEAD
+
+Deal with merge conflicts
+=========================
+
+Deal with push errors
+=====================
+
+git fetch origin
+
+How I combine GUI and CLI
+=========================
+
+* I use GitX[1] for add/remove, commit, log
+* I use the command line for fetch, merge, branch
+* I write shell scripts to automate push and fetch
+
+Other things I use
+==================
+
+* Multiple remotes
+* Bash integration
+* rebase
+* git-svn
+* gitgui, gitk, gitx
+
+Links
+=====
+
+* `Git workflow and cheat sheet`__
+* `$ cheat git`__
+* `Git for computer scientists`__
+
+__ http://www.markus-gattol.name/misc/mm/si/content/git_workflow_and_cheat_sheet.png
+__ http://cheat.errtheblog.com/s/git
+__ http://eagain.net/articles/git-for-computer-scientists/
