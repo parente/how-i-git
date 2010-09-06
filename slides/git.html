@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
 <meta name="version" content="S5 1.1" />
-<title>Just Enough Git</title>
+<title>How I Git</title>
 <meta name="author" content="Peter Parente" />
 <meta name="date" content="2010-09-10" />
 <style type="text/css">
@@ -337,13 +337,13 @@ ul.auto-toc {
 
 </div>
 <div id="footer">
-<h1>Just Enough Git</h1>
-
+<h1>How I Git</h1>
+<h2>UNC Open Web</h2>
 </div>
 </div>
 <div class="presentation">
 <div class="slide" id="slide0">
-<h1 class="title">Just Enough Git</h1>
+<h1 class="title">How I Git</h1>
 <table class="docinfo" frame="void" rules="none">
 <col class="docinfo-name" />
 <col class="docinfo-content" />
@@ -374,7 +374,7 @@ ul.auto-toc {
 </div>
 <div class="slide" id="what-is-git">
 <h1>What is Git?</h1>
-<ul class="simple">
+<ul class="incremental simple">
 <li>A distributed version control system</li>
 <li>A toolkit for dealing with changes</li>
 <li>A bunch of command line utilities</li>
@@ -397,8 +397,8 @@ ul.auto-toc {
 <li>commit</li>
 <li>branch</li>
 <li>repository</li>
-<li>master branch</li>
-<li>origin server</li>
+<li><em>master</em> branch</li>
+<li><em>origin</em> remote</li>
 </ul>
 </div>
 <div class="slide" id="lingo-verbs">
@@ -422,137 +422,311 @@ ul.auto-toc {
 </div>
 <div class="slide" id="install-git">
 <h1>Install git</h1>
-<ul class="simple">
+<ul class="incremental simple">
 <li>Did you do it?</li>
 <li>See <a class="reference external" href="http://help.github.com/">http://help.github.com/</a></li>
 </ul>
 </div>
 <div class="slide" id="configure-git">
 <h1>Configure git</h1>
-<ul class="simple">
+<ul class="incremental simple">
 <li>Edit ~/.gitconfig</li>
-<li>See <a class="reference external" href="http://gist.github.com/563331">http://gist.github.com/563331</a> for mine</li>
+<li>Set at least your name and email address</li>
+<li>See <a class="reference external" href="http://gist.github.com/563331">http://gist.github.com/563331</a> for my .gitconfig</li>
 </ul>
 </div>
 <div class="slide" id="create-a-repository">
 <h1>Create a repository</h1>
-<p>git init</p>
+<ul class="incremental">
+<li><p class="first">Make a project folder:</p>
+<pre class="literal-block">
+mkdir my_project
+</pre>
+</li>
+<li><p class="first">Make the folder a repository:</p>
+<pre class="literal-block">
+git init
+</pre>
+</li>
+</ul>
 </div>
 <div class="slide" id="clone-an-existing-repository">
 <h1>Clone an existing repository</h1>
-<p>git clone</p>
+<ul class="incremental">
+<li><p class="first">Clone the repository at URL in local folder:</p>
+<pre class="literal-block">
+git clone &lt;URL&gt; &lt;folder&gt;
+</pre>
+</li>
+<li><p class="first">Clone the repository for this tutorial:</p>
+<pre class="literal-block">
+git clone git&#64;github.com:parente/how-i-git.git
+</pre>
+</li>
+</ul>
 </div>
 <div class="slide" id="how-i-use-git-daily">
 <h1>How I use git daily</h1>
 <ol class="incremental arabic simple">
 <li>I write code</li>
-<li>I stage chunks of changes</li>
-<li>I commit to &quot;master&quot;</li>
+<li>I stage chunks of code</li>
+<li>I commit to branch &quot;master&quot;</li>
 <li>GOTO 1</li>
 </ol>
 </div>
 <div class="slide" id="stage-some-changes">
 <h1>Stage some changes</h1>
-<p>git add --patch
-git remove</p>
+<ul class="incremental">
+<li><p class="first">Add all changes in a file:</p>
+<pre class="literal-block">
+git add &lt;file&gt;
+</pre>
+</li>
+<li><p class="first">Remove all changes in a file:</p>
+<pre class="literal-block">
+git remove &lt;file&gt;
+</pre>
+</li>
+<li><p class="first">Add chunks interactively:</p>
+<pre class="literal-block">
+git add -i
+</pre>
+</li>
+</ul>
 </div>
 <div class="slide" id="commit-my-changes">
 <h1>Commit my changes</h1>
-<p>git commit</p>
+<ul class="incremental">
+<li><p class="first">Commit staged changes:</p>
+<pre class="literal-block">
+git commit
+</pre>
+</li>
+<li><p class="first">Enter a description of the commit when prompted</p>
+</li>
+</ul>
 </div>
 <div class="slide" id="how-i-share-code-on-github">
 <h1>How I share code on github</h1>
-<ol class="arabic simple">
+<ol class="incremental arabic simple">
+<li>I register for an account on github</li>
 <li>I fetch commits from github</li>
 <li>I push my commits to github</li>
-<li>I merge remote changes into master</li>
+<li>I merge remote changes into <em>master</em></li>
 </ol>
+</div>
+<div class="slide" id="register-on-github">
+<h1>Register on github</h1>
+<ul class="simple">
+<li>github provides free hosting for code repositories</li>
+<li>Register for an account</li>
+<li>Generate a keypair</li>
+<li>Register the keypair with github</li>
+<li>Again, see <a class="reference external" href="http://help.github.com/">http://help.github.com/</a></li>
+</ul>
 </div>
 <div class="slide" id="fetch-changes-from-a-remote-repository">
 <h1>Fetch changes from a remote repository</h1>
-<p>git fetch</p>
+<ul class="incremental">
+<li><p class="first">Show remote repositories:</p>
+<pre class="literal-block">
+git remote show
+</pre>
+</li>
+<li><p class="first">Get info about a remote repository:</p>
+<pre class="literal-block">
+git remote show &lt;remote alias&gt;
+</pre>
+</li>
+<li><p class="first">Get an update of what happened remotely:</p>
+<pre class="literal-block">
+git fetch &lt;remote alias&gt;
+</pre>
+</li>
+</ul>
 </div>
 <div class="slide" id="merge-remote-changes">
 <h1>Merge remote changes</h1>
-<p>git merge origin/master</p>
+<ul class="incremental">
+<li><p class="first">Merge remote commits into a local branch:</p>
+<pre class="literal-block">
+git merge &lt;remote alias&gt;/&lt;branch&gt;
+</pre>
+</li>
+</ul>
 </div>
 <div class="slide" id="push-commits-to-a-remote-repository">
 <h1>Push commits to a remote repository</h1>
-<p>git push origin master</p>
+<ul class="incremental">
+<li><p class="first">Send local commits to a remote branch:</p>
+<pre class="literal-block">
+git push &lt;remote alias&gt; &lt;branch&gt;
+</pre>
+</li>
+</ul>
 </div>
 <div class="slide" id="how-i-work-on-big-features">
 <h1>How I work on &quot;big&quot; features</h1>
 <ol class="arabic simple">
-<li>I create a branch</li>
-<li>I switch to the branch</li>
+<li>I switch to a local branch</li>
+<li>I create a local branch</li>
 <li>I code, stage, commit in the branch</li>
-<li>I switch back to &quot;master&quot; to do other work</li>
-<li>I merge the branch into &quot;master&quot;</li>
+<li>I switch to other branches as needed</li>
+<li>I merge the branch into <em>master</em> when &quot;done&quot;</li>
 <li>I might push a branch to github</li>
 <li>I might track a branch on github</li>
 </ol>
 </div>
-<div class="slide" id="create-a-new-branch">
-<h1>Create a new branch</h1>
-<p>git checkout -b &lt;branch&gt;</p>
-</div>
 <div class="slide" id="switch-to-a-branch">
 <h1>Switch to a branch</h1>
-<p>git checkout &lt;branch&gt;</p>
+<ul class="incremental">
+<li><p class="first">List available branches:</p>
+<pre class="literal-block">
+git branch -a
+</pre>
+</li>
+<li><p class="first">Switch the working copy to an existing local branch:</p>
+<pre class="literal-block">
+git checkout &lt;branch&gt;
+</pre>
+</li>
+<li><p class="first">Stage, commit, push, fetch, etc. operate on the active branch</p>
+</li>
+</ul>
 </div>
-<div class="slide" id="merge-one-branch-into-another">
-<h1>Merge one branch into another</h1>
-<p>git merge &lt;branch&gt;</p>
+<div class="slide" id="create-a-new-branch">
+<h1>Create a new branch</h1>
+<ul class="incremental">
+<li><p class="first">Start a local branch for a separate line of work:</p>
+<pre class="literal-block">
+git checkout -b &lt;branch&gt;
+</pre>
+</li>
+</ul>
 </div>
-<div class="slide" id="start-a-local-copy-of-a-shared-branch">
-<h1>Start a local copy of a shared branch</h1>
-<p>git branch --track &lt;server&gt; &lt;branch&gt;</p>
+<div class="slide" id="merge-branches">
+<h1>Merge branches</h1>
+<ul class="incremental">
+<li><p class="first">Merge a local branch into the active branch:</p>
+<pre class="literal-block">
+git merge &lt;branch&gt;
+</pre>
+</li>
+</ul>
 </div>
-<div class="slide" id="how-i-deal-with-disaster">
-<h1>How I deal with disaster</h1>
+<div class="slide" id="track-a-remote-branch">
+<h1>Track a remote branch</h1>
+<ul class="incremental">
+<li><p class="first">Start a local copy of a remote branch:</p>
+<pre class="literal-block">
+git branch --track &lt;remote alias&gt; &lt;branch&gt;
+</pre>
+</li>
+<li><p class="first">Stage, commit, push, fetch, etc. to the local branch</p>
+</li>
+<li><p class="first">Fetch, merge and push between your local branch and the remote</p>
+</li>
+</ul>
+</div>
+<div class="slide" id="how-i-deal-with-problems">
+<h1>How I deal with problems</h1>
 <ul class="simple">
 <li>I reset my working copy</li>
 <li>I amend the last commit</li>
 <li>I undo the last commit</li>
 <li>I resolve conflicts during merge</li>
 <li>I fetch and merge before I push</li>
+<li>I stash incomplete work before remote ops</li>
 </ul>
 </div>
 <div class="slide" id="reset-the-working-copy">
 <h1>Reset the working copy</h1>
-<p>git reset --hard HEAD</p>
-<p><strong>Warning</strong>: loses uncommitted work</p>
+<ul class="incremental">
+<li><p class="first">Revert all uncommitted changes:</p>
+<pre class="literal-block">
+git reset --hard HEAD
+</pre>
+</li>
+<li><p class="first"><strong>Warning</strong>: You cannot undo this action!</p>
+</li>
+</ul>
 </div>
 <div class="slide" id="amend-the-last-commit">
 <h1>Amend the last commit</h1>
+<ul class="incremental">
+<li><p class="first">Stage chunks to commit</p>
+</li>
+<li><p class="first">Commit the staged chunks plus those from the last commit:</p>
+<pre class="literal-block">
+git commit --amend
+</pre>
+</li>
+<li><p class="first">Replaces the last commit with one containing all chunks</p>
+</li>
+<li><p class="first"><strong>Warning</strong>: Don't do this if you already pushed the commit!</p>
+</li>
+</ul>
 </div>
 <div class="slide" id="undo-the-last-commit">
 <h1>Undo the last commit</h1>
+<ul class="incremental">
+<li><p class="first">Remove the last commit from the history</p>
+</li>
+<li><p class="first">Apply the changes to the working copy</p>
+<blockquote>
 <p>git reset --soft HEAD</p>
+</blockquote>
+</li>
+</ul>
 </div>
 <div class="slide" id="deal-with-merge-conflicts">
 <h1>Deal with merge conflicts</h1>
+<ul class="incremental simple">
+<li>Many people can commit changes at the same time</li>
+<li>git usually handles changes in the same files automatically</li>
+<li>git needs human help when changes overlap</li>
+</ul>
+</div>
+<div class="slide" id="deal-with-merge-conflicts-2">
+<h1>Deal with merge conflicts [2]</h1>
+<ul class="incremental simple">
+<li>Look at the merge error message</li>
+<li>Open the files with conflicts in an editor</li>
+<li>Search for ====</li>
+<li>Keep the desired lines of code</li>
+<li>Use <em>git add</em> to stage the fixes</li>
+<li>Use <em>git commit</em> to finish the merge</li>
+</ul>
 </div>
 <div class="slide" id="deal-with-push-errors">
 <h1>Deal with push errors</h1>
-<p>git fetch origin</p>
-</div>
-<div class="slide" id="how-i-combine-gui-and-cli">
-<h1>How I combine GUI and CLI</h1>
-<ul class="simple">
-<li>I use GitX[1] for add/remove, commit, log</li>
-<li>I use the command line for fetch, merge, branch</li>
-<li>I write shell scripts to automate push and fetch</li>
+<ul class="incremental">
+<li><p class="first">Push fails if the local branch is out of date:</p>
+<pre class="literal-block">
+git fetch &lt;remote alias&gt;
+git merge &lt;remote alias&gt;/&lt;branch&gt;
+</pre>
+</li>
 </ul>
 </div>
-<div class="slide" id="other-things-i-use">
-<h1>Other things I use</h1>
+<div class="slide" id="do-i-really-do-all-this-typing">
+<h1>Do I really do all this typing?</h1>
+<ul class="simple">
+<li>Heck no!</li>
+<li>I use <a class="reference external" href="http://github.com/brotherbard/gitx/downloads">GitX</a> for add/remove, commit, log (frequent)</li>
+<li>I use the command line for fetch, merge, branch (rare)</li>
+<li>I write shell scripts to automate push and fetch (rarer)</li>
+</ul>
+</div>
+<div class="slide" id="other-features-i-use">
+<h1>Other features I use</h1>
 <ul class="simple">
 <li>Multiple remotes</li>
-<li>Bash integration</li>
+<li>bash integration</li>
+<li>pull</li>
 <li>rebase</li>
 <li>git-svn</li>
-<li>gitgui, gitk, gitx</li>
+<li>gitgui, gitk, GitX (Mac)</li>
 </ul>
 </div>
 <div class="slide" id="links">

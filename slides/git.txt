@@ -1,14 +1,18 @@
 .. include:: <s5defs.txt>
 
-===============
-Just Enough Git
-===============
+=========
+How I Git
+=========
 
 :Author: Peter Parente
 :Date: 2010-09-10
 
+.. footer:: UNC Open Web
+
 What is Git?
 ============
+
+.. class:: incremental
 
 * A distributed version control system
 * A toolkit for dealing with changes
@@ -34,8 +38,8 @@ Lingo: Nouns
 * commit
 * branch
 * repository
-* master branch
-* origin server
+* *master* branch
+* *origin* remote
 
 Lingo: Verbs
 ============
@@ -61,24 +65,45 @@ How I git started
 Install git
 ===========
 
+.. class:: incremental
+
 * Did you do it?
 * See http://help.github.com/
 
 Configure git
 =============
 
+.. class:: incremental
+
 * Edit ~/.gitconfig
-* See http://gist.github.com/563331 for mine
+* Set at least your name and email address
+* See http://gist.github.com/563331 for my .gitconfig
 
 Create a repository
 ===================
 
-git init
+.. class:: incremental
+
+* Make a project folder::
+
+   mkdir my_project
+
+* Make the folder a repository::   
+
+      git init
 
 Clone an existing repository
 ============================
 
-git clone <remote repository URL>
+.. class:: incremental
+
+* Clone the repository at URL in local folder::
+
+   git clone <URL> <folder>
+
+* Clone the repository for this tutorial::
+   
+   git clone git@github.com:parente/how-i-git.git
 
 How I use git daily
 ===================
@@ -86,75 +111,149 @@ How I use git daily
 .. class:: incremental
 
 #. I write code
-#. I stage chunks of changes
-#. I commit to "master"
+#. I stage chunks of code
+#. I commit to branch "master"
 #. GOTO 1
 
 Stage some changes
 ==================
 
-git add --patch
-git remove
+.. class:: incremental
+
+* Add all changes in a file::
+
+   git add <file>
+
+* Remove all changes in a file::
+
+   git remove <file>
+
+* Add chunks interactively::
+
+   git add -i
 
 Commit my changes
 =================
 
-git commit
+.. class:: incremental
+
+* Commit staged changes:: 
+
+   git commit
+   
+* Enter a description of the commit when prompted
 
 How I share code on github
 ==========================
 
+.. class:: incremental
+
+#. I register for an account on github
 #. I fetch commits from github
 #. I push my commits to github
-#. I merge remote changes into master
+#. I merge remote changes into *master*
+
+Register on github
+==================
+
+* github provides free hosting for code repositories
+* Register for an account
+* Generate a keypair
+* Register the keypair with github
+* Again, see http://help.github.com/
 
 Fetch changes from a remote repository
 ======================================
 
-git fetch origin
+.. class:: incremental
+
+* Show remote repositories::
+
+   git remote show
+   
+* Get info about a remote repository::
+
+   git remote show <remote alias>
+
+* Get an update of what happened remotely::
+
+   git fetch <remote alias>
 
 Merge remote changes
 ====================
 
-git merge origin/master
+.. class:: incremental
+
+* Merge remote commits into a local branch::
+
+   git merge <remote alias>/<branch>
 
 Push commits to a remote repository
 ===================================
 
-git push origin master
+.. class:: incremental
+
+* Send local commits to a remote branch::
+
+   git push <remote alias> <branch>
 
 How I work on "big" features
 ============================
 
-#. I create a branch
-#. I switch to the branch
+#. I switch to a local branch
+#. I create a local branch
 #. I code, stage, commit in the branch
-#. I switch back to "master" to do other work
-#. I merge the branch into "master"
+#. I switch to other branches as needed
+#. I merge the branch into *master* when "done"
 #. I might push a branch to github
 #. I might track a branch on github
-
-Create a new branch
-===================
-
-git checkout -b <branch>
 
 Switch to a branch
 ==================
 
-git checkout <branch>
+.. class:: incremental
 
-Merge one branch into another
-=============================
+* List available branches::
 
-git merge <branch>
+   git branch -a
 
-Start a local copy of a shared branch
-=====================================
+* Switch the working copy to an existing local branch::
 
-git branch --track <server> <branch>
+   git checkout <branch>
+   
+* Stage, commit, push, fetch, etc. operate on the active branch
 
-How I deal with disaster
+Create a new branch
+===================
+
+.. class:: incremental
+
+* Start a local branch for a separate line of work::
+
+   git checkout -b <branch>
+
+Merge branches
+==============
+
+.. class:: incremental
+
+* Merge a local branch into the active branch::
+
+   git merge <branch>
+
+Track a remote branch
+=====================
+
+.. class:: incremental
+
+* Start a local copy of a remote branch::
+
+   git branch --track <remote alias> <branch>
+
+* Stage, commit, push, fetch, etc. to the local branch
+* Fetch, merge and push between your local branch and the remote
+
+How I deal with problems
 ========================
 
 * I reset my working copy
@@ -162,45 +261,96 @@ How I deal with disaster
 * I undo the last commit
 * I resolve conflicts during merge
 * I fetch and merge before I push
+* I stash incomplete work before remote ops
 
 Reset the working copy
 ======================
 
-git reset --hard HEAD
+.. class:: incremental
 
-**Warning**: loses uncommitted work
+* Revert all uncommitted changes::
+
+   git reset --hard HEAD
+
+* **Warning**: You cannot undo this action!
 
 Amend the last commit
 =====================
 
+.. class:: incremental
+
+* Stage chunks to commit
+* Commit the staged chunks plus those from the last commit::
+
+   git commit --amend
+
+* Replaces the last commit with one containing all chunks
+* **Warning**: Don't do this if you already pushed the commit!
+
 Undo the last commit
 ====================
 
-git reset --soft HEAD
+.. class:: incremental
+
+* Remove the last commit from the history
+* Apply the changes to the working copy
+
+   git reset --soft HEAD 
 
 Deal with merge conflicts
 =========================
 
+.. class:: incremental
+
+* Many people can commit changes at the same time
+* git usually handles changes in the same files automatically
+* git needs human help when changes overlap
+
+Deal with merge conflicts [2]
+=============================
+
+.. class:: incremental
+
+* Look at the merge error message
+* Open the files with conflicts in an editor
+* Search for ====
+* Keep the desired lines of code
+* Use *git add* to stage the fixes
+* Use *git commit* to finish the merge
+
 Deal with push errors
 =====================
 
-git fetch origin
+.. class:: incremental
 
-How I combine GUI and CLI
-=========================
+* Push fails if the local branch is out of date::
 
-* I use GitX[1] for add/remove, commit, log
-* I use the command line for fetch, merge, branch
-* I write shell scripts to automate push and fetch
+   git fetch <remote alias>
+   git merge <remote alias>/<branch>
 
-Other things I use
-==================
+Do I really do all this typing?
+===============================
+
+.. class:: incremental
+
+* Heck no!
+* I use `GitX`__ for add/remove, commit, log (frequent)
+* I use the command line for fetch, merge, branch (rare)
+* I write shell scripts to automate push and fetch (rarer)
+
+__ http://github.com/brotherbard/gitx/downloads
+
+Other features I use
+====================
+
+.. class:: incremental
 
 * Multiple remotes
-* Bash integration
+* bash integration
+* pull
 * rebase
 * git-svn
-* gitgui, gitk, gitx
+* gitgui, gitk, GitX (Mac)
 
 Links
 =====
