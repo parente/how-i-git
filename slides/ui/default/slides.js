@@ -1,12 +1,14 @@
 // S5 v1.1 slides.js -- released into the Public Domain
+// Modified for Docutils (http://docutils.sf.net) by David Goodger
 //
-// Please see http://www.meyerweb.com/eric/tools/s5/credits.html for information 
-// about all the wonderful and talented contributors to this code!
+// Please see http://www.meyerweb.com/eric/tools/s5/credits.html for
+// information about all the wonderful and talented contributors to this code!
 
 var undef;
 var slideCSS = '';
 var snum = 0;
 var smax = 1;
+var slideIDs = new Array();
 var incpos = 0;
 var number = undef;
 var s5mode = true;
@@ -80,7 +82,13 @@ function slideLabel() {
 		var obj = slideColl[n];
 
 		var did = 'slide' + n.toString();
-		obj.setAttribute('id',did);
+		if (obj.getAttribute('id')) {
+			slideIDs[n] = obj.getAttribute('id');
+		}
+		else {
+			obj.setAttribute('id',did);
+			slideIDs[n] = did;
+		}
 		if (isOp) continue;
 
 		var otext = '';
@@ -101,25 +109,33 @@ function slideLabel() {
 
 function currentSlide() {
 	var cs;
+	var footer_nodes;
+	var vis = 'visible';
 	if (document.getElementById) {
 		cs = document.getElementById('currentSlide');
+		footer_nodes = document.getElementById('footer').childNodes;
 	} else {
 		cs = document.currentSlide;
+		footer = document.footer.childNodes;
 	}
 	cs.innerHTML = '<span id="csHere">' + snum + '<\/span> ' + 
 		'<span id="csSep">\/<\/span> ' + 
 		'<span id="csTotal">' + (smax-1) + '<\/span>';
 	if (snum == 0) {
-		cs.style.visibility = 'hidden';
-	} else {
-		cs.style.visibility = 'visible';
+		vis = 'hidden';
 	}
+	cs.style.visibility = vis;
+	for (var i = 0; i < footer_nodes.length; i++) {
+		if (footer_nodes[i].nodeType == 1) {
+			footer_nodes[i].style.visibility = vis;
+		}
+	}		
 }
 
 function go(step) {
 	if (document.getElementById('slideProj').disabled || step == 0) return;
 	var jl = document.getElementById('jumplist');
-	var cid = 'slide' + snum;
+	var cid = slideIDs[snum];
 	var ce = document.getElementById(cid);
 	if (incrementals[snum].length > 0) {
 		for (var i = 0; i < incrementals[snum].length; i++) {
@@ -134,10 +150,10 @@ function go(step) {
 		if (snum < 0) snum = 0;
 	} else
 		snum = parseInt(jl.value);
-	var nid = 'slide' + snum;
+	var nid = slideIDs[snum];
 	var ne = document.getElementById(nid);
 	if (!ne) {
-		ne = document.getElementById('slide0');
+		ne = document.getElementById(slideIDs[0]);
 		snum = 0;
 	}
 	if (step < 0) {incpos = incrementals[snum].length} else {incpos = 0;}
@@ -289,7 +305,7 @@ function clicker(e) {
 		target = window.event.srcElement;
 		e = window.event;
 	} else target = e.target;
-	if (target.getAttribute('href') != null || hasValue(target.rel, 'external') || isParentOrSelf(target, 'controls') || isParentOrSelf(target,'embed') || isParentOrSelf(target,'object')) return true;
+    if (target.href != null || hasValue(target.rel, 'external') || isParentOrSelf(target, 'controls') || isParentOrSelf(target,'embed') || isParentOrSelf(target, 'object')) return true; 
 	if (!e.which || e.which == 1) {
 		if (!incrementals[snum] || incpos >= incrementals[snum].length) {
 			go(1);
@@ -300,37 +316,27 @@ function clicker(e) {
 }
 
 function findSlide(hash) {
-	var target = null;
-	var slides = GetElementsWithClassName('*','slide');
-	for (var i = 0; i < slides.length; i++) {
-		var targetSlide = slides[i];
-		if ( (targetSlide.name && targetSlide.name == hash)
-		 || (targetSlide.id && targetSlide.id == hash) ) {
-			target = targetSlide;
-			break;
+	var target = document.getElementById(hash);
+	if (target) {
+		for (var i = 0; i < slideIDs.length; i++) {
+			if (target.id == slideIDs[i]) return i;
 		}
-	}
-	while(target != null && target.nodeName != 'BODY') {
-		if (hasClass(target, 'slide')) {
-			return parseInt(target.id.slice(5));
-		}
-		target = target.parentNode;
 	}
 	return null;
 }
 
 function slideJump() {
-	if (window.location.hash == null) return;
-	var sregex = /^#slide(\d+)$/;
-	var matches = sregex.exec(window.location.hash);
-	var dest = null;
-	if (matches != null) {
-		dest = parseInt(matches[1]);
-	} else {
-		dest = findSlide(window.location.hash.slice(1));
+	if (window.location.hash == null || window.location.hash == '') {
+		currentSlide();
+		return;
 	}
-	if (dest != null)
-		go(dest - snum);
+	if (window.location.hash == null) return;
+	var dest = null;
+	dest = findSlide(window.location.hash.slice(1));
+	if (dest == null) {
+		dest = 0;
+	}
+	go(dest - snum);
 }
 
 function fixLinks() {
@@ -339,7 +345,7 @@ function fixLinks() {
 	var aelements = document.getElementsByTagName('A');
 	for (var i = 0; i < aelements.length; i++) {
 		var a = aelements[i].href;
-		var slideID = a.match('\#slide[0-9]{1,2}');
+		var slideID = a.match('\#.+');
 		if ((slideID) && (slideID[0].slice(0,1) == '#')) {
 			var dest = findSlide(slideID[0].slice(1));
 			if (dest != null) {
@@ -496,7 +502,7 @@ function getIncrementals(obj) {
 function createIncrementals() {
 	var incrementals = new Array();
 	for (var i = 0; i < smax; i++) {
-		incrementals[i] = getIncrementals(document.getElementById('slide'+i));
+		incrementals[i] = getIncrementals(document.getElementById(slideIDs[i]));
 	}
 	return incrementals;
 }
