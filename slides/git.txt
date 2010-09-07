@@ -23,35 +23,108 @@ Why do I like git?
 
 .. class:: incremental
 
-* Staging is useful
-* Local branching is fast
-* It has that Unix feel
-* github is great
+* I need some form of version control
+* Staging is what svn, cvs lacked
+* git has that Unix feel
+* github is a great service
 
-Lingo: Nouns
+Lingo: Local repository
+=======================
+
+.. image:: images/flow2.png
+   :height: 600
+   :align: center
+
+Lingo: Remote repository
+========================
+
+.. image:: images/flow3.png
+   :height: 600
+   :align: center
+
+Lingo: Working copy
+===================
+
+.. image:: images/flow4.png
+   :height: 600
+   :align: center
+
+Lingo: Stage
 ============
 
-.. class:: incremental
+.. image:: images/flow5.png
+   :height: 600
+   :align: center
 
-* working copy
-* stage
-* commit
-* branch
-* repository
-* *master* branch
-* *origin* remote
+Lingo: Commit
+=============
 
-Lingo: Verbs
-============
+.. image:: images/flow6.png
+   :height: 600
+   :align: center
 
-.. class:: incremental
+Lingo: Commit history
+=====================
 
-* to stage
-* to commit
-* to branch
-* to push
-* to fetch
-* to merge
+.. image:: images/flow7.png
+   :height: 600
+   :align: center
+
+Lingo: Branch
+=============
+
+.. image:: images/flow8.png
+   :height: 600
+   :align: center
+
+Lingo: Branches
+===============
+
+.. image:: images/flow9.png
+   :height: 600
+   :align: center
+
+Lingo: To stage
+===============
+
+.. image:: images/flow10.png
+   :height: 600
+   :align: center
+
+Lingo: To commit
+================
+
+.. image:: images/flow11.png
+   :height: 600
+   :align: center
+
+Lingo: To branch
+================
+
+.. image:: images/flow12.png
+   :height: 600
+   :align: center
+
+Lingo: To merge
+===============
+
+.. image:: images/flow13.png
+   :height: 600
+   :align: center
+
+Lingo: To fetch
+===============
+
+.. image:: images/flow14.png
+   :height: 600
+   :align: center
+
+Lingo: To push
+==============
+
+.. image:: images/flow15.png
+   :height: 600
+   :align: center
 
 How I git started
 =================
@@ -162,8 +235,8 @@ Register on github
 * Register the keypair with github
 * Again, see http://help.github.com/
 
-Fetch changes from a remote repository
-======================================
+Fetch remote changes
+====================
 
 .. class:: incremental
 
@@ -188,8 +261,8 @@ Merge remote changes
 
    git merge <remote alias>/<branch>
 
-Push commits to a remote repository
-===================================
+Push local changes
+==================
 
 .. class:: incremental
 
@@ -200,13 +273,25 @@ Push commits to a remote repository
 How I work on "big" features
 ============================
 
-#. I switch to a local branch
+.. class:: incremental
+
 #. I create a local branch
 #. I code, stage, commit in the branch
 #. I switch to other branches as needed
 #. I merge the branch into *master* when "done"
 #. I might push a branch to github
 #. I might track a branch on github
+
+Create a new branch
+===================
+
+.. class:: incremental
+
+* Start a local branch for a separate line of work::
+
+   git checkout -b <branch>
+
+* Commands now operate on the new *active branch*
 
 Switch to a branch
 ==================
@@ -217,20 +302,12 @@ Switch to a branch
 
    git branch -a
 
-* Switch the working copy to an existing local branch::
+* Make a branch active::
 
    git checkout <branch>
    
-* Stage, commit, push, fetch, etc. operate on the active branch
-
-Create a new branch
-===================
-
-.. class:: incremental
-
-* Start a local branch for a separate line of work::
-
-   git checkout -b <branch>
+* Working copy reflects the latest commit on the branch
+* commands now operate on the new active branch
 
 Merge branches
 ==============
@@ -255,6 +332,8 @@ Track a remote branch
 
 How I deal with problems
 ========================
+
+.. class:: incremental
 
 * I reset my working copy
 * I amend the last commit
@@ -293,7 +372,7 @@ Undo the last commit
 .. class:: incremental
 
 * Remove the last commit from the history
-* Apply the changes to the working copy
+* Leave the changes in the working copy
 
    git reset --soft HEAD 
 

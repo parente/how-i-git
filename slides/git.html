@@ -383,34 +383,67 @@ ul.auto-toc {
 <div class="slide" id="why-do-i-like-git">
 <h1>Why do I like git?</h1>
 <ul class="incremental simple">
-<li>Staging is useful</li>
-<li>Local branching is fast</li>
-<li>It has that Unix feel</li>
-<li>github is great</li>
+<li>I need some form of version control</li>
+<li>Staging is what svn, cvs lacked</li>
+<li>git has that Unix feel</li>
+<li>github is a great service</li>
 </ul>
 </div>
-<div class="slide" id="lingo-nouns">
-<h1>Lingo: Nouns</h1>
-<ul class="incremental simple">
-<li>working copy</li>
-<li>stage</li>
-<li>commit</li>
-<li>branch</li>
-<li>repository</li>
-<li><em>master</em> branch</li>
-<li><em>origin</em> remote</li>
-</ul>
+<div class="slide" id="lingo-local-repository">
+<h1>Lingo: Local repository</h1>
+<img alt="images/flow2.png" class="align-center" src="images/flow2.png" style="height: 600px;" />
 </div>
-<div class="slide" id="lingo-verbs">
-<h1>Lingo: Verbs</h1>
-<ul class="incremental simple">
-<li>to stage</li>
-<li>to commit</li>
-<li>to branch</li>
-<li>to push</li>
-<li>to fetch</li>
-<li>to merge</li>
-</ul>
+<div class="slide" id="lingo-remote-repository">
+<h1>Lingo: Remote repository</h1>
+<img alt="images/flow3.png" class="align-center" src="images/flow3.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-working-copy">
+<h1>Lingo: Working copy</h1>
+<img alt="images/flow4.png" class="align-center" src="images/flow4.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-stage">
+<h1>Lingo: Stage</h1>
+<img alt="images/flow5.png" class="align-center" src="images/flow5.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-commit">
+<h1>Lingo: Commit</h1>
+<img alt="images/flow6.png" class="align-center" src="images/flow6.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-commit-history">
+<h1>Lingo: Commit history</h1>
+<img alt="images/flow7.png" class="align-center" src="images/flow7.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-branch">
+<h1>Lingo: Branch</h1>
+<img alt="images/flow8.png" class="align-center" src="images/flow8.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-branches">
+<h1>Lingo: Branches</h1>
+<img alt="images/flow9.png" class="align-center" src="images/flow9.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-to-stage">
+<h1>Lingo: To stage</h1>
+<img alt="images/flow10.png" class="align-center" src="images/flow10.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-to-commit">
+<h1>Lingo: To commit</h1>
+<img alt="images/flow11.png" class="align-center" src="images/flow11.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-to-branch">
+<h1>Lingo: To branch</h1>
+<img alt="images/flow12.png" class="align-center" src="images/flow12.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-to-merge">
+<h1>Lingo: To merge</h1>
+<img alt="images/flow13.png" class="align-center" src="images/flow13.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-to-fetch">
+<h1>Lingo: To fetch</h1>
+<img alt="images/flow14.png" class="align-center" src="images/flow14.png" style="height: 600px;" />
+</div>
+<div class="slide" id="lingo-to-push">
+<h1>Lingo: To push</h1>
+<img alt="images/flow15.png" class="align-center" src="images/flow15.png" style="height: 600px;" />
 </div>
 <div class="slide" id="how-i-git-started">
 <h1>How I git started</h1>
@@ -525,8 +558,8 @@ git commit
 <li>Again, see <a class="reference external" href="http://help.github.com/">http://help.github.com/</a></li>
 </ul>
 </div>
-<div class="slide" id="fetch-changes-from-a-remote-repository">
-<h1>Fetch changes from a remote repository</h1>
+<div class="slide" id="fetch-remote-changes">
+<h1>Fetch remote changes</h1>
 <ul class="incremental">
 <li><p class="first">Show remote repositories:</p>
 <pre class="literal-block">
@@ -555,8 +588,8 @@ git merge &lt;remote alias&gt;/&lt;branch&gt;
 </li>
 </ul>
 </div>
-<div class="slide" id="push-commits-to-a-remote-repository">
-<h1>Push commits to a remote repository</h1>
+<div class="slide" id="push-local-changes">
+<h1>Push local changes</h1>
 <ul class="incremental">
 <li><p class="first">Send local commits to a remote branch:</p>
 <pre class="literal-block">
@@ -567,8 +600,7 @@ git push &lt;remote alias&gt; &lt;branch&gt;
 </div>
 <div class="slide" id="how-i-work-on-big-features">
 <h1>How I work on &quot;big&quot; features</h1>
-<ol class="arabic simple">
-<li>I switch to a local branch</li>
+<ol class="incremental arabic simple">
 <li>I create a local branch</li>
 <li>I code, stage, commit in the branch</li>
 <li>I switch to other branches as needed</li>
@@ -576,6 +608,18 @@ git push &lt;remote alias&gt; &lt;branch&gt;
 <li>I might push a branch to github</li>
 <li>I might track a branch on github</li>
 </ol>
+</div>
+<div class="slide" id="create-a-new-branch">
+<h1>Create a new branch</h1>
+<ul class="incremental">
+<li><p class="first">Start a local branch for a separate line of work:</p>
+<pre class="literal-block">
+git checkout -b &lt;branch&gt;
+</pre>
+</li>
+<li><p class="first">Commands now operate on the new <em>active branch</em></p>
+</li>
+</ul>
 </div>
 <div class="slide" id="switch-to-a-branch">
 <h1>Switch to a branch</h1>
@@ -585,22 +629,14 @@ git push &lt;remote alias&gt; &lt;branch&gt;
 git branch -a
 </pre>
 </li>
-<li><p class="first">Switch the working copy to an existing local branch:</p>
+<li><p class="first">Make a branch active:</p>
 <pre class="literal-block">
 git checkout &lt;branch&gt;
 </pre>
 </li>
-<li><p class="first">Stage, commit, push, fetch, etc. operate on the active branch</p>
+<li><p class="first">Working copy reflects the latest commit on the branch</p>
 </li>
-</ul>
-</div>
-<div class="slide" id="create-a-new-branch">
-<h1>Create a new branch</h1>
-<ul class="incremental">
-<li><p class="first">Start a local branch for a separate line of work:</p>
-<pre class="literal-block">
-git checkout -b &lt;branch&gt;
-</pre>
+<li><p class="first">commands now operate on the new active branch</p>
 </li>
 </ul>
 </div>
@@ -630,7 +666,7 @@ git branch --track &lt;remote alias&gt; &lt;branch&gt;
 </div>
 <div class="slide" id="how-i-deal-with-problems">
 <h1>How I deal with problems</h1>
-<ul class="simple">
+<ul class="incremental simple">
 <li>I reset my working copy</li>
 <li>I amend the last commit</li>
 <li>I undo the last commit</li>
@@ -672,7 +708,7 @@ git commit --amend
 <ul class="incremental">
 <li><p class="first">Remove the last commit from the history</p>
 </li>
-<li><p class="first">Apply the changes to the working copy</p>
+<li><p class="first">Leave the changes in the working copy</p>
 <blockquote>
 <p>git reset --soft HEAD</p>
 </blockquote>
@@ -711,7 +747,7 @@ git merge &lt;remote alias&gt;/&lt;branch&gt;
 </div>
 <div class="slide" id="do-i-really-do-all-this-typing">
 <h1>Do I really do all this typing?</h1>
-<ul class="simple">
+<ul class="incremental simple">
 <li>Heck no!</li>
 <li>I use <a class="reference external" href="http://github.com/brotherbard/gitx/downloads">GitX</a> for add/remove, commit, log (frequent)</li>
 <li>I use the command line for fetch, merge, branch (rare)</li>
@@ -720,7 +756,7 @@ git merge &lt;remote alias&gt;/&lt;branch&gt;
 </div>
 <div class="slide" id="other-features-i-use">
 <h1>Other features I use</h1>
-<ul class="simple">
+<ul class="incremental simple">
 <li>Multiple remotes</li>
 <li>bash integration</li>
 <li>pull</li>
