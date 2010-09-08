@@ -170,13 +170,17 @@ Clone an existing repository
 
 .. class:: incremental
 
-* Clone the repository at URL in local folder::
+* Clone a remote repository in a local folder::
 
    git clone <URL> <folder>
 
-* Clone the repository for this tutorial::
+* Clone the read/write tutorial repository::
    
    git clone git@github.com:parente/how-i-git.git
+
+* Clone the read-only repository::
+
+   git clone git://github.com/parente/how-i-git.git
 
 How I use git daily
 ===================
