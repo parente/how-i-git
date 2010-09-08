@@ -24,7 +24,7 @@ Why do I like git?
 .. class:: incremental
 
 * I need some form of version control
-* Staging is what svn, cvs lacked
+* Staging and local branching fit my style
 * git has that Unix feel
 * github is a great service
 
@@ -32,98 +32,98 @@ Lingo: Local repository
 =======================
 
 .. image:: images/flow2.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: Remote repository
 ========================
 
 .. image:: images/flow3.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: Working copy
 ===================
 
 .. image:: images/flow4.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: Stage
 ============
 
 .. image:: images/flow5.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: Commit
 =============
 
 .. image:: images/flow6.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: Commit history
 =====================
 
 .. image:: images/flow7.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: Branch
 =============
 
 .. image:: images/flow8.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: Branches
 ===============
 
 .. image:: images/flow9.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: To stage
 ===============
 
 .. image:: images/flow10.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: To commit
 ================
 
 .. image:: images/flow11.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: To branch
 ================
 
 .. image:: images/flow12.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: To merge
 ===============
 
 .. image:: images/flow13.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: To fetch
 ===============
 
 .. image:: images/flow14.png
-   :height: 600
+   :height: 500
    :align: center
 
 Lingo: To push
 ==============
 
 .. image:: images/flow15.png
-   :height: 600
+   :height: 500
    :align: center
 
 How I git started
@@ -185,25 +185,36 @@ How I use git daily
 
 #. I write code
 #. I stage chunks of code
-#. I commit to branch "master"
-#. GOTO 1
+#. I commit to *master* branch
 
 Stage some changes
 ==================
 
 .. class:: incremental
 
-* Add all changes in a file::
+* Mark a whole file as part of a commit::
 
    git add <file>
 
-* Remove all changes in a file::
+* Unmark a file as part of a commit::
 
-   git remove <file>
-
-* Add chunks interactively::
+   git remove <file> --cached
+   
+* Mark / unmark chunks interactively::
 
    git add -i
+
+Stage some changes [2]
+======================
+
+.. class:: incremental
+
+* Check the status of the stage::
+
+   git status
+
+* Many next steps noted in the output
+* Read the text!
 
 Commit my changes
 =================
@@ -215,6 +226,10 @@ Commit my changes
    git commit
    
 * Enter a description of the commit when prompted
+
+* View the history of commits::
+
+   git log
 
 How I share code on github
 ==========================
@@ -228,6 +243,8 @@ How I share code on github
 
 Register on github
 ==================
+
+.. class:: incremental
 
 * github provides free hosting for code repositories
 * Register for an account
@@ -255,16 +272,12 @@ Fetch remote changes
 Merge remote changes
 ====================
 
-.. class:: incremental
-
 * Merge remote commits into a local branch::
 
    git merge <remote alias>/<branch>
 
 Push local changes
 ==================
-
-.. class:: incremental
 
 * Send local commits to a remote branch::
 
@@ -291,7 +304,7 @@ Create a new branch
 
    git checkout -b <branch>
 
-* Commands now operate on the new *active branch*
+* Commands operate on the new *active branch*
 
 Switch to a branch
 ==================
@@ -307,12 +320,10 @@ Switch to a branch
    git checkout <branch>
    
 * Working copy reflects the latest commit on the branch
-* commands now operate on the new active branch
+* Commands operate on the activated branch
 
 Merge branches
 ==============
-
-.. class:: incremental
 
 * Merge a local branch into the active branch::
 
@@ -335,12 +346,12 @@ How I deal with problems
 
 .. class:: incremental
 
-* I reset my working copy
-* I amend the last commit
-* I undo the last commit
-* I resolve conflicts during merge
-* I fetch and merge before I push
-* I stash incomplete work before remote ops
+#. I reset my working copy
+#. I amend the last commit
+#. I undo the last commit
+#. I resolve conflicts during merge
+#. I fetch and merge before I push
+#. I stash incomplete work before remote ops
 
 Reset the working copy
 ======================
@@ -372,7 +383,7 @@ Undo the last commit
 .. class:: incremental
 
 * Remove the last commit from the history
-* Leave the changes in the working copy
+* Leave the changes in the working copy::
 
    git reset --soft HEAD 
 
@@ -381,8 +392,8 @@ Deal with merge conflicts
 
 .. class:: incremental
 
-* Many people can commit changes at the same time
-* git usually handles changes in the same files automatically
+* Developers can commit changes at the same time
+* git can merge many concurrent changes automatically
 * git needs human help when changes overlap
 
 Deal with merge conflicts [2]
@@ -400,9 +411,8 @@ Deal with merge conflicts [2]
 Deal with push errors
 =====================
 
-.. class:: incremental
-
-* Push fails if the local branch is out of date::
+* Push fails if the local branch is out of date
+* Bring the local branch up to date::
 
    git fetch <remote alias>
    git merge <remote alias>/<branch>

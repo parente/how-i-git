@@ -384,66 +384,66 @@ ul.auto-toc {
 <h1>Why do I like git?</h1>
 <ul class="incremental simple">
 <li>I need some form of version control</li>
-<li>Staging is what svn, cvs lacked</li>
+<li>Staging and local branching fit my style</li>
 <li>git has that Unix feel</li>
 <li>github is a great service</li>
 </ul>
 </div>
 <div class="slide" id="lingo-local-repository">
 <h1>Lingo: Local repository</h1>
-<img alt="images/flow2.png" class="align-center" src="images/flow2.png" style="height: 600px;" />
+<img alt="images/flow2.png" class="align-center" src="images/flow2.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-remote-repository">
 <h1>Lingo: Remote repository</h1>
-<img alt="images/flow3.png" class="align-center" src="images/flow3.png" style="height: 600px;" />
+<img alt="images/flow3.png" class="align-center" src="images/flow3.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-working-copy">
 <h1>Lingo: Working copy</h1>
-<img alt="images/flow4.png" class="align-center" src="images/flow4.png" style="height: 600px;" />
+<img alt="images/flow4.png" class="align-center" src="images/flow4.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-stage">
 <h1>Lingo: Stage</h1>
-<img alt="images/flow5.png" class="align-center" src="images/flow5.png" style="height: 600px;" />
+<img alt="images/flow5.png" class="align-center" src="images/flow5.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-commit">
 <h1>Lingo: Commit</h1>
-<img alt="images/flow6.png" class="align-center" src="images/flow6.png" style="height: 600px;" />
+<img alt="images/flow6.png" class="align-center" src="images/flow6.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-commit-history">
 <h1>Lingo: Commit history</h1>
-<img alt="images/flow7.png" class="align-center" src="images/flow7.png" style="height: 600px;" />
+<img alt="images/flow7.png" class="align-center" src="images/flow7.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-branch">
 <h1>Lingo: Branch</h1>
-<img alt="images/flow8.png" class="align-center" src="images/flow8.png" style="height: 600px;" />
+<img alt="images/flow8.png" class="align-center" src="images/flow8.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-branches">
 <h1>Lingo: Branches</h1>
-<img alt="images/flow9.png" class="align-center" src="images/flow9.png" style="height: 600px;" />
+<img alt="images/flow9.png" class="align-center" src="images/flow9.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-stage">
 <h1>Lingo: To stage</h1>
-<img alt="images/flow10.png" class="align-center" src="images/flow10.png" style="height: 600px;" />
+<img alt="images/flow10.png" class="align-center" src="images/flow10.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-commit">
 <h1>Lingo: To commit</h1>
-<img alt="images/flow11.png" class="align-center" src="images/flow11.png" style="height: 600px;" />
+<img alt="images/flow11.png" class="align-center" src="images/flow11.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-branch">
 <h1>Lingo: To branch</h1>
-<img alt="images/flow12.png" class="align-center" src="images/flow12.png" style="height: 600px;" />
+<img alt="images/flow12.png" class="align-center" src="images/flow12.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-merge">
 <h1>Lingo: To merge</h1>
-<img alt="images/flow13.png" class="align-center" src="images/flow13.png" style="height: 600px;" />
+<img alt="images/flow13.png" class="align-center" src="images/flow13.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-fetch">
 <h1>Lingo: To fetch</h1>
-<img alt="images/flow14.png" class="align-center" src="images/flow14.png" style="height: 600px;" />
+<img alt="images/flow14.png" class="align-center" src="images/flow14.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-push">
 <h1>Lingo: To push</h1>
-<img alt="images/flow15.png" class="align-center" src="images/flow15.png" style="height: 600px;" />
+<img alt="images/flow15.png" class="align-center" src="images/flow15.png" style="height: 500px;" />
 </div>
 <div class="slide" id="how-i-git-started">
 <h1>How I git started</h1>
@@ -503,27 +503,40 @@ git clone git&#64;github.com:parente/how-i-git.git
 <ol class="incremental arabic simple">
 <li>I write code</li>
 <li>I stage chunks of code</li>
-<li>I commit to branch &quot;master&quot;</li>
-<li>GOTO 1</li>
+<li>I commit to <em>master</em> branch</li>
 </ol>
 </div>
 <div class="slide" id="stage-some-changes">
 <h1>Stage some changes</h1>
 <ul class="incremental">
-<li><p class="first">Add all changes in a file:</p>
+<li><p class="first">Mark a whole file as part of a commit:</p>
 <pre class="literal-block">
 git add &lt;file&gt;
 </pre>
 </li>
-<li><p class="first">Remove all changes in a file:</p>
+<li><p class="first">Unmark a file as part of a commit:</p>
 <pre class="literal-block">
-git remove &lt;file&gt;
+git remove &lt;file&gt; --cached
 </pre>
 </li>
-<li><p class="first">Add chunks interactively:</p>
+<li><p class="first">Mark / unmark chunks interactively:</p>
 <pre class="literal-block">
 git add -i
 </pre>
+</li>
+</ul>
+</div>
+<div class="slide" id="stage-some-changes-2">
+<h1>Stage some changes [2]</h1>
+<ul class="incremental">
+<li><p class="first">Check the status of the stage:</p>
+<pre class="literal-block">
+git status
+</pre>
+</li>
+<li><p class="first">Many next steps noted in the output</p>
+</li>
+<li><p class="first">Read the text!</p>
 </li>
 </ul>
 </div>
@@ -536,6 +549,11 @@ git commit
 </pre>
 </li>
 <li><p class="first">Enter a description of the commit when prompted</p>
+</li>
+<li><p class="first">View the history of commits:</p>
+<pre class="literal-block">
+git log
+</pre>
 </li>
 </ul>
 </div>
@@ -550,7 +568,7 @@ git commit
 </div>
 <div class="slide" id="register-on-github">
 <h1>Register on github</h1>
-<ul class="simple">
+<ul class="incremental simple">
 <li>github provides free hosting for code repositories</li>
 <li>Register for an account</li>
 <li>Generate a keypair</li>
@@ -580,7 +598,7 @@ git fetch &lt;remote alias&gt;
 </div>
 <div class="slide" id="merge-remote-changes">
 <h1>Merge remote changes</h1>
-<ul class="incremental">
+<ul>
 <li><p class="first">Merge remote commits into a local branch:</p>
 <pre class="literal-block">
 git merge &lt;remote alias&gt;/&lt;branch&gt;
@@ -590,7 +608,7 @@ git merge &lt;remote alias&gt;/&lt;branch&gt;
 </div>
 <div class="slide" id="push-local-changes">
 <h1>Push local changes</h1>
-<ul class="incremental">
+<ul>
 <li><p class="first">Send local commits to a remote branch:</p>
 <pre class="literal-block">
 git push &lt;remote alias&gt; &lt;branch&gt;
@@ -617,7 +635,7 @@ git push &lt;remote alias&gt; &lt;branch&gt;
 git checkout -b &lt;branch&gt;
 </pre>
 </li>
-<li><p class="first">Commands now operate on the new <em>active branch</em></p>
+<li><p class="first">Commands operate on the new <em>active branch</em></p>
 </li>
 </ul>
 </div>
@@ -636,13 +654,13 @@ git checkout &lt;branch&gt;
 </li>
 <li><p class="first">Working copy reflects the latest commit on the branch</p>
 </li>
-<li><p class="first">commands now operate on the new active branch</p>
+<li><p class="first">Commands operate on the activated branch</p>
 </li>
 </ul>
 </div>
 <div class="slide" id="merge-branches">
 <h1>Merge branches</h1>
-<ul class="incremental">
+<ul>
 <li><p class="first">Merge a local branch into the active branch:</p>
 <pre class="literal-block">
 git merge &lt;branch&gt;
@@ -666,14 +684,14 @@ git branch --track &lt;remote alias&gt; &lt;branch&gt;
 </div>
 <div class="slide" id="how-i-deal-with-problems">
 <h1>How I deal with problems</h1>
-<ul class="incremental simple">
+<ol class="incremental arabic simple">
 <li>I reset my working copy</li>
 <li>I amend the last commit</li>
 <li>I undo the last commit</li>
 <li>I resolve conflicts during merge</li>
 <li>I fetch and merge before I push</li>
 <li>I stash incomplete work before remote ops</li>
-</ul>
+</ol>
 </div>
 <div class="slide" id="reset-the-working-copy">
 <h1>Reset the working copy</h1>
@@ -708,18 +726,18 @@ git commit --amend
 <ul class="incremental">
 <li><p class="first">Remove the last commit from the history</p>
 </li>
-<li><p class="first">Leave the changes in the working copy</p>
-<blockquote>
-<p>git reset --soft HEAD</p>
-</blockquote>
+<li><p class="first">Leave the changes in the working copy:</p>
+<pre class="literal-block">
+git reset --soft HEAD
+</pre>
 </li>
 </ul>
 </div>
 <div class="slide" id="deal-with-merge-conflicts">
 <h1>Deal with merge conflicts</h1>
 <ul class="incremental simple">
-<li>Many people can commit changes at the same time</li>
-<li>git usually handles changes in the same files automatically</li>
+<li>Developers can commit changes at the same time</li>
+<li>git can merge many concurrent changes automatically</li>
 <li>git needs human help when changes overlap</li>
 </ul>
 </div>
@@ -736,8 +754,10 @@ git commit --amend
 </div>
 <div class="slide" id="deal-with-push-errors">
 <h1>Deal with push errors</h1>
-<ul class="incremental">
-<li><p class="first">Push fails if the local branch is out of date:</p>
+<ul>
+<li><p class="first">Push fails if the local branch is out of date</p>
+</li>
+<li><p class="first">Bring the local branch up to date:</p>
 <pre class="literal-block">
 git fetch &lt;remote alias&gt;
 git merge &lt;remote alias&gt;/&lt;branch&gt;
