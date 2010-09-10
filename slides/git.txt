@@ -43,9 +43,10 @@ $ -> ()-:
 
 * I'm working on a large JS code base
 * I have to find and fix a bug
-* I strew ``console.log`` everywhere to find it
+* I sprinkle ``console.log`` liberally
 * I fix the problem
-* Now I want to share my fixes with my team
+* I want make my fix permanent, not my debug cruft
+* I want to share my fix with my team
 
 .. class:: incremental
 .. class:: tiny
