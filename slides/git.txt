@@ -249,7 +249,7 @@ Stage some changes
 
 * Unmark a file as part of a commit::
 
-   git remove <file> --cached
+   git rm <file> --cached
    
 * Mark / unmark chunks interactively::
 
@@ -293,8 +293,8 @@ How I share code on GitHub
 
 #. I register for an account on GitHub
 #. I fetch commits from GitHub
-#. I push my commits to GitHub
 #. I merge remote changes into *master*
+#. I push my commits to GitHub
 
 Register on GitHub
 ==================
@@ -413,12 +413,12 @@ How I deal with problems
 
 .. class:: incremental
 
-#. I reset my working copy
-#. I amend the last commit
-#. I undo the last commit
-#. I resolve conflicts during merge
-#. I fetch and merge before I push
-#. I stash incomplete work before remote ops
+* I reset my working copy
+* I amend the last commit
+* I undo the last commit
+* I resolve conflicts during merge
+* I fetch and merge before I push
+* I stash incomplete work before remote ops
 
 Reset the working copy
 ======================
@@ -452,7 +452,7 @@ Undo the last commit
 * Remove the last commit from the history
 * Leave the changes in the working copy::
 
-   git reset --soft HEAD 
+   git reset --soft HEAD^
 
 Deal with merge conflicts
 =========================

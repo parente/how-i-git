@@ -396,9 +396,10 @@ ul.auto-toc {
 <ul class="incremental simple">
 <li>I'm working on a large JS code base</li>
 <li>I have to find and fix a bug</li>
-<li>I strew <tt class="docutils literal">console.log</tt> everywhere to find it</li>
+<li>I sprinkle <tt class="docutils literal">console.log</tt> liberally</li>
 <li>I fix the problem</li>
-<li>Now I want to share my fixes with my team</li>
+<li>I want make my fix permanent, not my debug cruft</li>
+<li>I want to share my fix with my team</li>
 </ul>
 <p class="incremental tiny">Psst. Put my money where my mouth is.</p>
 </div>
@@ -536,7 +537,7 @@ git add &lt;file&gt;
 </li>
 <li><p class="first">Unmark a file as part of a commit:</p>
 <pre class="literal-block">
-git remove &lt;file&gt; --cached
+git rm &lt;file&gt; --cached
 </pre>
 </li>
 <li><p class="first">Mark / unmark chunks interactively:</p>
@@ -583,8 +584,8 @@ git log
 <ol class="incremental arabic simple">
 <li>I register for an account on GitHub</li>
 <li>I fetch commits from GitHub</li>
-<li>I push my commits to GitHub</li>
 <li>I merge remote changes into <em>master</em></li>
+<li>I push my commits to GitHub</li>
 </ol>
 </div>
 <div class="slide" id="register-on-github">
@@ -708,14 +709,14 @@ git branch --track &lt;remote alias&gt; &lt;branch&gt;
 <div class="slide" id="how-i-deal-with-problems">
 <h1>How I deal with problems</h1>
 <img alt="images/css.jpg" class="align-right" src="images/css.jpg" style="height: 250px;" />
-<ol class="incremental arabic simple">
+<ul class="incremental simple">
 <li>I reset my working copy</li>
 <li>I amend the last commit</li>
 <li>I undo the last commit</li>
 <li>I resolve conflicts during merge</li>
 <li>I fetch and merge before I push</li>
 <li>I stash incomplete work before remote ops</li>
-</ol>
+</ul>
 </div>
 <div class="slide" id="reset-the-working-copy">
 <h1>Reset the working copy</h1>
@@ -752,7 +753,7 @@ git commit --amend
 </li>
 <li><p class="first">Leave the changes in the working copy:</p>
 <pre class="literal-block">
-git reset --soft HEAD
+git reset --soft HEAD^
 </pre>
 </li>
 </ul>
