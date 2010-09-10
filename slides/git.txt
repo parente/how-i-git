@@ -12,6 +12,10 @@ How I Git
 What is Git?
 ============
 
+.. image:: images/git.jpg
+   :height: 250px
+   :align: right
+
 .. class:: incremental
 
 * A distributed version control system
@@ -21,12 +25,32 @@ What is Git?
 Why do I like git?
 ==================
 
+.. image:: images/git-zazzle.jpg
+   :align: right
+   :height: 250px
+
 .. class:: incremental
 
 * I need some form of version control
-* Staging and local branching fit my style
-* git has that Unix feel
-* github is a great service
+* Staging and branching fit my style
+* It has that Unix feel
+* GitHub is a great service
+
+$ -> ()-:
+=========
+
+.. class:: incremental
+
+* I'm working on a large JS code base
+* I have to find and fix a bug
+* I strew ``console.log`` everywhere to find it
+* I fix the problem
+* Now I want to share my fixes with my team
+
+.. class:: incremental
+.. class:: tiny
+
+Psst. Put my money where my mouth is.
 
 Lingo: Local repository
 =======================
@@ -34,6 +58,7 @@ Lingo: Local repository
 .. image:: images/flow2.png
    :height: 500
    :align: center
+   :alt: A local repository contains data plus its history on the local machine
 
 Lingo: Remote repository
 ========================
@@ -41,6 +66,7 @@ Lingo: Remote repository
 .. image:: images/flow3.png
    :height: 500
    :align: center
+   :alt: Remote repositories are equivalent to local ones, but reside on remote machines
 
 Lingo: Working copy
 ===================
@@ -48,6 +74,7 @@ Lingo: Working copy
 .. image:: images/flow4.png
    :height: 500
    :align: center
+   :alt: The working copy is the data you edit
 
 Lingo: Stage
 ============
@@ -55,6 +82,7 @@ Lingo: Stage
 .. image:: images/flow5.png
    :height: 500
    :align: center
+   :alt: The stage is where you indicate what working copy changes will become permanent
 
 Lingo: Commit
 =============
@@ -62,6 +90,7 @@ Lingo: Commit
 .. image:: images/flow6.png
    :height: 500
    :align: center
+   :alt: A commit is a set of permanent changes
 
 Lingo: Commit history
 =====================
@@ -69,6 +98,7 @@ Lingo: Commit history
 .. image:: images/flow7.png
    :height: 500
    :align: center
+   :alt: The commit history links commits to one or more parents
 
 Lingo: Branch
 =============
@@ -76,6 +106,7 @@ Lingo: Branch
 .. image:: images/flow8.png
    :height: 500
    :align: center
+   :alt: A branch is a linear commit history
 
 Lingo: Branches
 ===============
@@ -83,6 +114,7 @@ Lingo: Branches
 .. image:: images/flow9.png
    :height: 500
    :align: center
+   :alt: A repository can contain a tree of branches
 
 Lingo: To stage
 ===============
@@ -90,6 +122,7 @@ Lingo: To stage
 .. image:: images/flow10.png
    :height: 500
    :align: center
+   :alt: To mark changes as candidates for the next commits
 
 Lingo: To commit
 ================
@@ -97,6 +130,7 @@ Lingo: To commit
 .. image:: images/flow11.png
    :height: 500
    :align: center
+   :alt: To make staged changes permanent
 
 Lingo: To branch
 ================
@@ -104,6 +138,7 @@ Lingo: To branch
 .. image:: images/flow12.png
    :height: 500
    :align: center
+   :alt: To create a new branch with the current commit as its parent
 
 Lingo: To merge
 ===============
@@ -111,6 +146,7 @@ Lingo: To merge
 .. image:: images/flow13.png
    :height: 500
    :align: center
+   :alt: To join to two branches
 
 Lingo: To fetch
 ===============
@@ -118,6 +154,7 @@ Lingo: To fetch
 .. image:: images/flow14.png
    :height: 500
    :align: center
+   :alt: To get updates from a remote repository
 
 Lingo: To push
 ==============
@@ -125,9 +162,14 @@ Lingo: To push
 .. image:: images/flow15.png
    :height: 500
    :align: center
+   :alt: To send local branch commits to a remote repository
 
 How I git started
 =================
+
+.. image:: images/buzz-lightyear.jpg
+   :height: 250px
+   :align: right
 
 .. class:: incremental
 
@@ -163,7 +205,7 @@ Create a repository
 
 * Make the folder a repository::   
 
-      git init
+   git init
 
 Clone an existing repository
 ============================
@@ -176,14 +218,18 @@ Clone an existing repository
 
 * Clone the read/write tutorial repository::
    
-   git clone git@github.com:parente/how-i-git.git
+   git clone git@github.com:uncopenweb/how-i-git.git
 
 * Clone the read-only repository::
 
-   git clone git://github.com/parente/how-i-git.git
+   git clone git://github.com/uncopenweb/how-i-git.git
 
 How I use git daily
 ===================
+
+.. image:: images/coding.png
+   :height: 150px
+   :align: right
 
 .. class:: incremental
 
@@ -235,25 +281,33 @@ Commit my changes
 
    git log
 
-How I share code on github
+How I share code on GitHub
 ==========================
 
+.. image:: images/github.png
+   :align: right
+   :height: 150px
+
 .. class:: incremental
 
-#. I register for an account on github
-#. I fetch commits from github
-#. I push my commits to github
+#. I register for an account on GitHub
+#. I fetch commits from GitHub
+#. I push my commits to GitHub
 #. I merge remote changes into *master*
 
-Register on github
+Register on GitHub
 ==================
+
+.. image:: images/github.png
+   :align: right
+   :height: 150px
 
 .. class:: incremental
 
-* github provides free hosting for code repositories
+* GitHub provides free OSS hosting
 * Register for an account
 * Generate a keypair
-* Register the keypair with github
+* Register the keypair with GitHub
 * Again, see http://help.github.com/
 
 Fetch remote changes
@@ -287,8 +341,12 @@ Push local changes
 
    git push <remote alias> <branch>
 
-How I work on "big" features
-============================
+How I work on "features"
+========================
+
+.. image:: images/feature.jpg
+   :height: 250px
+   :align: right
 
 .. class:: incremental
 
@@ -296,8 +354,8 @@ How I work on "big" features
 #. I code, stage, commit in the branch
 #. I switch to other branches as needed
 #. I merge the branch into *master* when "done"
-#. I might push a branch to github
-#. I might track a branch on github
+#. I might push a branch to GitHub
+#. I might track a branch on GitHub
 
 Create a new branch
 ===================
@@ -347,6 +405,10 @@ Track a remote branch
 
 How I deal with problems
 ========================
+
+.. image:: images/css.jpg
+   :height: 250px
+   :align: right
 
 .. class:: incremental
 
@@ -421,12 +483,11 @@ Deal with push errors
    git fetch <remote alias>
    git merge <remote alias>/<branch>
 
-Do I really do all this typing?
-===============================
+How I roll
+==========
 
 .. class:: incremental
 
-* Heck no!
 * I use `GitX`__ for add/remove, commit, log (frequent)
 * I use the command line for fetch, merge, branch (rare)
 * I write shell scripts to automate push and fetch (rarer)
@@ -451,7 +512,9 @@ Links
 * `Git workflow and cheat sheet`__
 * `$ cheat git`__
 * `Git for computer scientists`__
+* `git ready`__
 
 __ http://www.markus-gattol.name/misc/mm/si/content/git_workflow_and_cheat_sheet.png
 __ http://cheat.errtheblog.com/s/git
 __ http://eagain.net/articles/git-for-computer-scientists/
+__ http://www.gitready.com/

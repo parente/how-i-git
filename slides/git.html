@@ -374,6 +374,7 @@ ul.auto-toc {
 </div>
 <div class="slide" id="what-is-git">
 <h1>What is Git?</h1>
+<img alt="images/git.jpg" class="align-right" src="images/git.jpg" style="height: 250px;" />
 <ul class="incremental simple">
 <li>A distributed version control system</li>
 <li>A toolkit for dealing with changes</li>
@@ -382,71 +383,84 @@ ul.auto-toc {
 </div>
 <div class="slide" id="why-do-i-like-git">
 <h1>Why do I like git?</h1>
+<img alt="images/git-zazzle.jpg" class="align-right" src="images/git-zazzle.jpg" style="height: 250px;" />
 <ul class="incremental simple">
 <li>I need some form of version control</li>
-<li>Staging and local branching fit my style</li>
-<li>git has that Unix feel</li>
-<li>github is a great service</li>
+<li>Staging and branching fit my style</li>
+<li>It has that Unix feel</li>
+<li>GitHub is a great service</li>
 </ul>
+</div>
+<div class="slide" id="id1">
+<h1>$ -&gt; ()-:</h1>
+<ul class="incremental simple">
+<li>I'm working on a large JS code base</li>
+<li>I have to find and fix a bug</li>
+<li>I strew <tt class="docutils literal">console.log</tt> everywhere to find it</li>
+<li>I fix the problem</li>
+<li>Now I want to share my fixes with my team</li>
+</ul>
+<p class="incremental tiny">Psst. Put my money where my mouth is.</p>
 </div>
 <div class="slide" id="lingo-local-repository">
 <h1>Lingo: Local repository</h1>
-<img alt="images/flow2.png" class="align-center" src="images/flow2.png" style="height: 500px;" />
+<img alt="A local repository contains data plus its history on the local machine" class="align-center" src="images/flow2.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-remote-repository">
 <h1>Lingo: Remote repository</h1>
-<img alt="images/flow3.png" class="align-center" src="images/flow3.png" style="height: 500px;" />
+<img alt="Remote repositories are equivalent to local ones, but reside on remote machines" class="align-center" src="images/flow3.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-working-copy">
 <h1>Lingo: Working copy</h1>
-<img alt="images/flow4.png" class="align-center" src="images/flow4.png" style="height: 500px;" />
+<img alt="The working copy is the data you edit" class="align-center" src="images/flow4.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-stage">
 <h1>Lingo: Stage</h1>
-<img alt="images/flow5.png" class="align-center" src="images/flow5.png" style="height: 500px;" />
+<img alt="The stage is where you indicate what working copy changes will become permanent" class="align-center" src="images/flow5.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-commit">
 <h1>Lingo: Commit</h1>
-<img alt="images/flow6.png" class="align-center" src="images/flow6.png" style="height: 500px;" />
+<img alt="A commit is a set of permanent changes" class="align-center" src="images/flow6.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-commit-history">
 <h1>Lingo: Commit history</h1>
-<img alt="images/flow7.png" class="align-center" src="images/flow7.png" style="height: 500px;" />
+<img alt="The commit history links commits to one or more parents" class="align-center" src="images/flow7.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-branch">
 <h1>Lingo: Branch</h1>
-<img alt="images/flow8.png" class="align-center" src="images/flow8.png" style="height: 500px;" />
+<img alt="A branch is a linear commit history" class="align-center" src="images/flow8.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-branches">
 <h1>Lingo: Branches</h1>
-<img alt="images/flow9.png" class="align-center" src="images/flow9.png" style="height: 500px;" />
+<img alt="A repository can contain a tree of branches" class="align-center" src="images/flow9.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-stage">
 <h1>Lingo: To stage</h1>
-<img alt="images/flow10.png" class="align-center" src="images/flow10.png" style="height: 500px;" />
+<img alt="To mark changes as candidates for the next commits" class="align-center" src="images/flow10.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-commit">
 <h1>Lingo: To commit</h1>
-<img alt="images/flow11.png" class="align-center" src="images/flow11.png" style="height: 500px;" />
+<img alt="To make staged changes permanent" class="align-center" src="images/flow11.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-branch">
 <h1>Lingo: To branch</h1>
-<img alt="images/flow12.png" class="align-center" src="images/flow12.png" style="height: 500px;" />
+<img alt="To create a new branch with the current commit as its parent" class="align-center" src="images/flow12.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-merge">
 <h1>Lingo: To merge</h1>
-<img alt="images/flow13.png" class="align-center" src="images/flow13.png" style="height: 500px;" />
+<img alt="To join to two branches" class="align-center" src="images/flow13.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-fetch">
 <h1>Lingo: To fetch</h1>
-<img alt="images/flow14.png" class="align-center" src="images/flow14.png" style="height: 500px;" />
+<img alt="To get updates from a remote repository" class="align-center" src="images/flow14.png" style="height: 500px;" />
 </div>
 <div class="slide" id="lingo-to-push">
 <h1>Lingo: To push</h1>
-<img alt="images/flow15.png" class="align-center" src="images/flow15.png" style="height: 500px;" />
+<img alt="To send local branch commits to a remote repository" class="align-center" src="images/flow15.png" style="height: 500px;" />
 </div>
 <div class="slide" id="how-i-git-started">
 <h1>How I git started</h1>
+<img alt="images/buzz-lightyear.jpg" class="align-right" src="images/buzz-lightyear.jpg" style="height: 250px;" />
 <ol class="incremental arabic simple">
 <li>I install git on my machine</li>
 <li>I set my git configuration</li>
@@ -493,18 +507,19 @@ git clone &lt;URL&gt; &lt;folder&gt;
 </li>
 <li><p class="first">Clone the read/write tutorial repository:</p>
 <pre class="literal-block">
-git clone git&#64;github.com:parente/how-i-git.git
+git clone git&#64;github.com:uncopenweb/how-i-git.git
 </pre>
 </li>
 <li><p class="first">Clone the read-only repository:</p>
 <pre class="literal-block">
-git clone git://github.com/parente/how-i-git.git
+git clone git://github.com/uncopenweb/how-i-git.git
 </pre>
 </li>
 </ul>
 </div>
 <div class="slide" id="how-i-use-git-daily">
 <h1>How I use git daily</h1>
+<img alt="images/coding.png" class="align-right" src="images/coding.png" style="height: 150px;" />
 <ol class="incremental arabic simple">
 <li>I write code</li>
 <li>I stage chunks of code</li>
@@ -563,21 +578,23 @@ git log
 </ul>
 </div>
 <div class="slide" id="how-i-share-code-on-github">
-<h1>How I share code on github</h1>
+<h1>How I share code on GitHub</h1>
+<img alt="images/github.png" class="align-right" src="images/github.png" style="height: 150px;" />
 <ol class="incremental arabic simple">
-<li>I register for an account on github</li>
-<li>I fetch commits from github</li>
-<li>I push my commits to github</li>
+<li>I register for an account on GitHub</li>
+<li>I fetch commits from GitHub</li>
+<li>I push my commits to GitHub</li>
 <li>I merge remote changes into <em>master</em></li>
 </ol>
 </div>
 <div class="slide" id="register-on-github">
-<h1>Register on github</h1>
+<h1>Register on GitHub</h1>
+<img alt="images/github.png" class="align-right" src="images/github.png" style="height: 150px;" />
 <ul class="incremental simple">
-<li>github provides free hosting for code repositories</li>
+<li>GitHub provides free OSS hosting</li>
 <li>Register for an account</li>
 <li>Generate a keypair</li>
-<li>Register the keypair with github</li>
+<li>Register the keypair with GitHub</li>
 <li>Again, see <a class="reference external" href="http://help.github.com/">http://help.github.com/</a></li>
 </ul>
 </div>
@@ -621,15 +638,16 @@ git push &lt;remote alias&gt; &lt;branch&gt;
 </li>
 </ul>
 </div>
-<div class="slide" id="how-i-work-on-big-features">
-<h1>How I work on &quot;big&quot; features</h1>
+<div class="slide" id="how-i-work-on-features">
+<h1>How I work on &quot;features&quot;</h1>
+<img alt="images/feature.jpg" class="align-right" src="images/feature.jpg" style="height: 250px;" />
 <ol class="incremental arabic simple">
 <li>I create a local branch</li>
 <li>I code, stage, commit in the branch</li>
 <li>I switch to other branches as needed</li>
 <li>I merge the branch into <em>master</em> when &quot;done&quot;</li>
-<li>I might push a branch to github</li>
-<li>I might track a branch on github</li>
+<li>I might push a branch to GitHub</li>
+<li>I might track a branch on GitHub</li>
 </ol>
 </div>
 <div class="slide" id="create-a-new-branch">
@@ -689,6 +707,7 @@ git branch --track &lt;remote alias&gt; &lt;branch&gt;
 </div>
 <div class="slide" id="how-i-deal-with-problems">
 <h1>How I deal with problems</h1>
+<img alt="images/css.jpg" class="align-right" src="images/css.jpg" style="height: 250px;" />
 <ol class="incremental arabic simple">
 <li>I reset my working copy</li>
 <li>I amend the last commit</li>
@@ -770,10 +789,9 @@ git merge &lt;remote alias&gt;/&lt;branch&gt;
 </li>
 </ul>
 </div>
-<div class="slide" id="do-i-really-do-all-this-typing">
-<h1>Do I really do all this typing?</h1>
+<div class="slide" id="how-i-roll">
+<h1>How I roll</h1>
 <ul class="incremental simple">
-<li>Heck no!</li>
 <li>I use <a class="reference external" href="http://github.com/brotherbard/gitx/downloads">GitX</a> for add/remove, commit, log (frequent)</li>
 <li>I use the command line for fetch, merge, branch (rare)</li>
 <li>I write shell scripts to automate push and fetch (rarer)</li>
@@ -796,6 +814,7 @@ git merge &lt;remote alias&gt;/&lt;branch&gt;
 <li><a class="reference external" href="http://www.markus-gattol.name/misc/mm/si/content/git_workflow_and_cheat_sheet.png">Git workflow and cheat sheet</a></li>
 <li><a class="reference external" href="http://cheat.errtheblog.com/s/git">$ cheat git</a></li>
 <li><a class="reference external" href="http://eagain.net/articles/git-for-computer-scientists/">Git for computer scientists</a></li>
+<li><a class="reference external" href="http://www.gitready.com/">git ready</a></li>
 </ul>
 </div>
 </div>
